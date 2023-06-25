@@ -8,7 +8,7 @@ describe("Array of Objects - Users",()=>{
                 cy.login(user.username,user.password)
                 if(user.valid){
                   
-                    cy.url().should("contain", "profile")
+                    cy.url().should("contain","profile")
                 }   else{
                    
                     cy.url().should("contain", "login")
