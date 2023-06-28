@@ -4,7 +4,8 @@
   "description": "This is going to be the project for udemy",
   "main": "index.js",
   "scripts": {
-    "runner": "cypress open --e2e --browser chrome --config baseUrl=http://uitestingplayground.com --env demoVar=Hello_From_Pack_File"
+    "runner": "cypress open --e2e --browser chrome --config baseUrl=http://uitestingplayground.com --env demoVar=Hello_From_Pack_File",
+    "cypress-run": "cypress run --browser chrome --spec cypress/e2e/26-customCommands.cy.ts"
   },
   "keywords": [
     "cypress",
@@ -21,6 +22,7 @@
     "cy-verify-downloads": "^0.1.14",
     "cypress": "^12.10.0",
     "cypress-file-upload": "^5.0.8",
+    "cypress-mochawesome-reporter": "^3.5.1",
     "cypress-real-events": "^1.7.6",
     "cypress-xpath": "^2.0.1",
     "typescript": "^5.0.4"
