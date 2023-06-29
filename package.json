@@ -25,6 +25,7 @@
     "cypress-mochawesome-reporter": "^3.5.1",
     "cypress-real-events": "^1.7.6",
     "cypress-xpath": "^2.0.1",
+    "node-xlsx": "^0.23.0",
     "typescript": "^5.0.4"
   }
 }
