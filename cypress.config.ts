@@ -7,6 +7,8 @@ const fs = require('fs')//for file
 const path = require('path')
 //mySQL requirements
 const mysql = require("mysql")
+//Faker
+const {faker} = require("@faker-js/faker")
 
 export default defineConfig({
   e2e: {
@@ -35,6 +37,19 @@ export default defineConfig({
       });
       require('cypress-mochawesome-reporter/plugin')(on)
       // implement node event listeners here
+      //Faker
+      on("task",{
+        freshUser(){
+          let user={
+            username: faker.name.firstName(),
+            email: faker.internet.email(),
+            password: faker.internet.password(),
+            registeredAt: faker.date.past(),
+            vehicle: faker.vehicle.vehicle()
+          }
+          return user
+        }
+      })
     },
     env:{
       demoVar: "Hello from Cypress.Config.Ts",
@@ -47,7 +62,8 @@ export default defineConfig({
         user:"root",
         password:"",
         database:"cypress_test"
-      }
+      },
+      mobileViewportWidthBreakpoint: 400
     }
   },
   pageLoadTimeout:60000,
